@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>HTML to LaTeX</title>
+<h2 align="center">Web Form Based LaTeX Converter</h2>
+<script src="js-latex.js"></script>
+</head>
+<body>
+<center>
+<table>
+<tr><th>Title :</th><th><input type="text" size=50 id="title" placeholder="TITLE"></th><br><br></tr>
+<tr><th>Author :</th><th> <input type="text" size=50 id="author" placeholder="AUTHOR"></th></tr><br><br>
+<tr><th>Abstract :</th><th> <textarea id="abstract" rows=5 cols=100 placeholder="ABSTRACT OF YOUR ARTICLE"></textarea></th></tr><br><br>
+<tr><th>Body :</th><th><textarea id="intro" rows=5 cols=100 placeholder="INTRODUCTION TO YOUR ARTICLE"></textarea></th></tr><br><br>
+
+</table>
+<input type="button" value="Convert to LaTeX" onclick="convert()"><br><br><br>
+<label id="output"></label>
+</center>
+</body>
+</html>

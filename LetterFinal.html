@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>HTML to LaTeX</title>
+
+
+<script>
+function convert()
+{
+
+var body=document.getElementById("body").value;
+var sign=document.getElementById("sign").value;
+var street=document.getElementById("street").value;
+var city=document.getElementById("city").value;
+var country=document.getElementById("country").value;
+
+var cname=document.getElementById("cname").value;
+var tstreet=document.getElementById("tstreet").value;
+var tcity=document.getElementById("tcity").value;
+var tcountry=document.getElementById("tcountry").value;
+
+var opening=document.getElementById("opening").value;
+var subject=document.getElementById("subject").value;
+var closing=document.getElementById("closing").value;
+
+document.getElementById("latex").innerHTML="<br>\\documentclass{letter}<br>\\signature{"+sign+"}<br>\\address{"+street+"\\\\"+city+"\\\\"+country+"}<br>\\begin{document}<br>\\begin{letter}{"+cname+"\\\\"+tstreet+"\\\\"+tcity+"\\\\"+tcountry+"}<br>\\opening{"+opening+"}<br>\\setlength{\\parindent}{10ex}<br>\\bigskip<br>\\textbf{"+subject+"}<br>\\bigskip\\noindent\\par<br>{"+body+"}<br>\\closing{"+closing+"}<br>\\end{letter}<br>\\end{document}";		
+}
+</script>
+</head>
+
+<body bgcolor="#b3d9ff"align="center">
+<form action="letterjs.js">
+<h2 align="center">Web Form Based LaTeX Converter</h2>
+<table align="right">
+<tr><th><label>Sender Name: <label></th><th><input type="text" id="sign"></th></tr>
+<tr><th><label>Street: <label></th><th><input type="text" id="street"></th></tr>
+<tr><th><label>City: <label></th><th><input type="text" id="city"></th></tr>
+<tr><th><label>Country: <label></th><th><input type="text" id="country"></th></tr>
+</table>
+</br></br></br></br>
+<table align="left">
+
+<tr><th><label>Receiver Name: <label></th><th><input type="text" id="cname"></th></tr>
+<tr><th><label>Street: <label></th><th><input type="text" id="tstreet"></th></tr>
+<tr><th><label>City: <label></th><th><input type="text" id="tcity"></th></tr>
+<tr><th><label>Country: <label></th><th><input type="text" id="tcountry"></th></tr>
+</table>
+<br>
+
+<table align="center">
+<tr><th>Salutation:</th><th><input type="text" id="opening" size="148"></th></tr>
+<tr><th><label>Subject:<label></th><th><input type="text" id="subject" size="148"></textarea></th></tr>
+<tr><th><label>Body: <label></th><th><textarea rows="15" cols="150" id="body"></textarea></th></tr>
+<tr><th>Regards:</th><th><input type="text" id="closing" size="148"></th></tr>
+</table>
+<br><br>
+<input type="button" value="Convert to LaTeX" onclick="convert()">
+</form>
+
+<label id="latex"></label>
+
+</body>
+</html>
+
+
